@@ -1,7 +1,6 @@
 // @algorithm @lc id=100333 lang=cpp
 // @title er-cha-sou-suo-shu-de-di-kda-jie-dian-lcof
 
-
 #include <iostream>
 #include <vector>
 #include <string>
@@ -16,10 +15,33 @@ using namespace std;
  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
  * };
  */
-class Solution {
+class Solution
+{
 public:
-    int kthLargest(TreeNode* root, int k) {
-        
+    int kthLargest(TreeNode *root, int k)
+    {
+        stack<TreeNode *> st;
+        int i = 0;
+        while (!st.empty() || root)
+        {
+            if (root)
+            {
+                st.emplace(root);
+                root = root->right;
+            }
+            else
+            {
+                root = st.top();
+                st.pop();
+                i++;
+                if (k == i)
+                {
+                    return root->val;
+                }
+                root = root->left;
+            }
+        }
+        return 0;
     }
 };
 // class Solution

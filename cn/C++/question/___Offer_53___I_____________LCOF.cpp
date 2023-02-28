@@ -20,7 +20,7 @@ using namespace std;
 // };
 class Solution
 // @test([5,7,7,8,8,10], 8)=2
-{
+z{
 public:
     int helper(vector<int> nums, int target)
     {
@@ -40,3 +40,4 @@ public:
         return helper(nums, target) - helper(nums, target - 1);
     }
 };
+// https://leetcode.cn/problems/zai-pai-xu-shu-zu-zhong-cha-zhao-shu-zi-lcof/solution/er-fen-fa-you-hua-ji-suan-liang-ge-you-bian-jie-de/
